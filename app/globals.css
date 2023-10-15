@@ -42,7 +42,7 @@ body {
 }
 
 .row:first-child {
-    margin-left: -100px; /* Offset by half the width of the hexagon */
+    margin-left: 50px !important; /* Offset by half the width of the hexagon */
 }
 
 .row:nth-child(even) {

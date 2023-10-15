@@ -26,7 +26,7 @@ export default function Home() {
                 for (let i = 0; i < rows; i++) {
                     let row = document.createElement('div');
                     row.className = "row";
-                    for (let j = 0; j < cols; j++) {
+                    for (let j = 0; j < cols+1; j++) {
                         let hex = document.createElement('div');
                         hex.className = "hexagon";
                         row.appendChild(hex);
