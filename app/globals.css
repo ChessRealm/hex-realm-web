@@ -41,10 +41,6 @@ body {
     background: linear-gradient(90deg, rgba(18, 17, 19, 1) 50%, rgba(0, 0, 0, 1) 50%);
 }
 
-.row:first-child {
-    margin-left: -50px; /* Offset by half the width of the hexagon */
-}
-
 .row:nth-child(even) {
     margin-left: 50px; /* half of hexagon's width */
 }
