@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -17,8 +17,8 @@ export default function Home() {
                 }
 
                 // Calculate required number of hexagons based on container dimensions
-                const hexWidth = 102; // 100px width + 1px margin on each side
-                const hexHeight = 57; // 50% of 110px height + 1px margin on top
+                const hexWidth = 102; 
+                const hexHeight = 57; 
                 const rows = Math.ceil(window.innerHeight / hexHeight);
                 const cols = Math.ceil(window.innerWidth / hexWidth);
 
@@ -37,15 +37,17 @@ export default function Home() {
         };
 
         const curser : any = document.querySelector(".curser");
-        const mouseMoveHandler = (e: any) => {
-            const X = e.clientX;
-            const Y = e.clientY;
+        let angle = 0;
+        const animateCursor = () => {
+            const X = window.innerWidth / 2 + (window.innerWidth / 2 - 100) * Math.cos(angle);
+            const Y = window.innerHeight / 2 + (window.innerHeight / 2 - 100) * Math.sin(angle);
             if (curser) {
                 curser.style.left = X + "px";
                 curser.style.top = Y + "px";
             }
+            angle += 0.005;
+            requestAnimationFrame(animateCursor);
         };
-        document.addEventListener('mousemove', mouseMoveHandler);
 
         const handleResize = () => {
             generateHexagons();
@@ -55,21 +57,22 @@ export default function Home() {
         // Initially generate hexagons
         generateHexagons();
 
+        // Start cursor animation
+        animateCursor();
+
         // Cleanup the event listener on component unmount
         return () => {
-            document.removeEventListener('mousemove', mouseMoveHandler);
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-	return (
-		<main>
-			<div className="container" ref={containerRef}>
-				<div className="curser"></div>
-
-				<div className="hexagonContainer"></div>
-				<div className="logo" style={{ backgroundImage: "url('og.png')" }}></div>
-			</div>
-		</main>
-	);
+    return (
+        <main>
+            <div className="container" ref={containerRef}>
+                <div className="hexagonContainer"></div>
+                <div className="curser"></div>
+                <div className="logo" style={{ backgroundImage: "url('og.png')" }}></div>
+            </div>
+        </main>
+    );
 }
