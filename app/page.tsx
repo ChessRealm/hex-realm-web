@@ -6,7 +6,7 @@ export default function Home() {
 
     useEffect(() => {
         const generateHexagons = () => {
-            const container = containerRef.current;
+            const container : any = containerRef.current;
 
             if (container) {
                 const hexagonContainer = container.querySelector('.hexagonContainer');
