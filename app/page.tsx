@@ -45,7 +45,7 @@ export default function Home() {
                 curser.style.left = X + "px";
                 curser.style.top = Y + "px";
             }
-            angle += 0.005;
+            angle += 0.05;
             requestAnimationFrame(animateCursor);
         };
 
