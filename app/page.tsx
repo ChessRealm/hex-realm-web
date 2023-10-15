@@ -67,10 +67,8 @@ export default function Home() {
 			<div className="container" ref={containerRef}>
 				<div className="curser"></div>
 
-				<div className="hexagonContainer">
-				</div>
-				<div className="title logo" style={{ backgroundImage: "url('logo.png')" }}></div>
-				<div className="title">Hex Realm</div>
+				<div className="hexagonContainer"></div>
+				<div className="logo" style={{ backgroundImage: "url('og.png')" }}></div>
 			</div>
 		</main>
 	);
