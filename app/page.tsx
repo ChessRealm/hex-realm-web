@@ -39,13 +39,13 @@ export default function Home() {
         const curser : any = document.querySelector(".curser");
         let angle = 0;
         const animateCursor = () => {
-            const X = window.innerWidth / 2 + (window.innerWidth / 2 - 100) * Math.cos(angle);
-            const Y = window.innerHeight / 2 + (window.innerHeight / 2 - 100) * Math.sin(angle);
+            const X = window.innerWidth / 2 + (window.innerWidth / 2 - 50) * Math.cos(angle);
+            const Y = window.innerHeight / 2 + (window.innerHeight / 2 - 50) * Math.sin(angle);
             if (curser) {
                 curser.style.left = X + "px";
                 curser.style.top = Y + "px";
             }
-            angle += 0.05;
+            angle += 0.010;
             requestAnimationFrame(animateCursor);
         };
 
