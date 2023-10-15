@@ -41,6 +41,10 @@ body {
     background: linear-gradient(90deg, rgba(18, 17, 19, 1) 50%, rgba(0, 0, 0, 1) 50%);
 }
 
+.row:first-child {
+    margin-left: -100px; /* Offset by half the width of the hexagon */
+}
+
 .row:nth-child(even) {
     margin-left: 50px; /* half of hexagon's width */
 }
@@ -71,8 +75,8 @@ body {
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -50%);
-    width: 35%;
-    height: 45%;
+    width: 320px;
+    height: 320px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
